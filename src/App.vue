@@ -2,8 +2,8 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span>SpaceX</span>
+        <span class="font-weight-light">Products</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
@@ -17,17 +17,20 @@
 
     <v-content>
       <HelloWorld/>
+      <PokeList/>
     </v-content>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import PokeList from './components/PokeList'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    PokeList
   },
   data () {
     return {
