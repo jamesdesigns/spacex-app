@@ -9,6 +9,8 @@ Vue.use(VueApollo)
 const AUTH_TOKEN = 'apollo-token'
 
 // Http endpoint
+// This MUST point to my GraphQL server!! http://localhost: my GraphQL server default 4000 yoga server that nexus helped generate.
+// 4466 is the prisma server!
 const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'http://localhost:4000/graphql'
 
 // Config

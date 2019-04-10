@@ -4,7 +4,7 @@
     text-xs-center
     wrap 
 >
-<div> {{ info }} </div>
+<div> {{ pokemon }} </div>
 </v-layout>
 </v-container>
 </template>
@@ -13,9 +13,13 @@ import axios from 'axios'
 import gql from 'graphql-tag'
 
 export default {
+  components: {
+    PokeCard
+  },
   data() {
     return {
-      info: ""
+      info: "",
+      pokemons: [],
     }
   },
   mounted () {
@@ -24,9 +28,10 @@ export default {
     // .then(response => (this.info = response))
   },
   apollo: {
-    pokemon: gql`query {
+    pokemons: gql`query {
       pokemons {
         name
+        originalId
       }
     }`,
    }
