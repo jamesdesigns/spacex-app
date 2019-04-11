@@ -9,6 +9,18 @@
 
 <v-flex xs12 sm6 offset-sm3>
       <v-card>
+             <v-card-actions class="blue-grey lighten-3">
+                  <v-spacer></v-spacer>
+                  <v-btn icon>
+                    <v-icon>favorite</v-icon>
+                  </v-btn>
+                  <v-btn icon>
+                    <v-icon>bookmark</v-icon>
+                  </v-btn>
+                  <v-btn icon>
+                    <v-icon>share</v-icon>
+                  </v-btn>
+                </v-card-actions>
         <v-img
           class="white--text"
           
@@ -16,19 +28,22 @@
           v-bind:src="imagelink"
         ></v-img>
 
-        <v-card-title primary-title class="d-flex">
+        <v-card-title primary-title class="d-flex blue-grey lighten-5">
           <div>
-            <h3 class="headline ml-5">{{ name }}</h3>
-            <div> {{ color }} </div>
-             <div> {{ size }} </div>
-              <div> ${{ price }} </div>
+            <h3 class="headline font-weight-light">{{ name }}</h3>
+            <div class="font-weight-medium"> {{ color }} </div>
+             <div class="font-weight-medium"> {{ size }} </div>
+              <div class="display-1 font-weight-bold"> ${{ price }} </div>
           </div>
         </v-card-title>
 
-        <v-card-actions class="d-flex">
+        <v-card-actions class="d-flex blue-grey lighten-5">
           <v-btn class="white--text" color="blue">BUY</v-btn>
           <!-- <v-btn class="white--text" color="blue">ADD TO FAVORITES</v-btn> -->
+
         </v-card-actions>
+
+              
       </v-card>
     </v-flex>
 
