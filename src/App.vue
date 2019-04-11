@@ -1,10 +1,11 @@
 <template>
   <v-app>
     <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>SpaceX</span>
-        <span class="font-weight-light"> Products</span>
-      </v-toolbar-title>
+        <v-img
+          v-bind:src="imagelogo"
+          aspect-ratio="4.60"
+        ></v-img>
+  
       <v-spacer></v-spacer>
       <!-- <v-btn
         flat
@@ -18,7 +19,6 @@
       <v-btn icon>
             <v-icon>search</v-icon>
           </v-btn>
- 
     </v-toolbar>
 
     <v-content>
@@ -40,6 +40,8 @@ export default {
   },
   data () {
     return {
+      imagelogo: "http://www.stickpng.com/assets/images/5842a770a6515b1e0ad75afe.png",
+      
       //
     }
   }
