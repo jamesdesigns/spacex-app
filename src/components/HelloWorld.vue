@@ -7,7 +7,6 @@
 >
 
 
-
 <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-img
@@ -17,18 +16,18 @@
           v-bind:src="imagelink"
         ></v-img>
 
-        <v-card-title primary-title>
+        <v-card-title primary-title class="d-flex">
           <div>
-            <h3 class="headline mb-0">{{ name }}</h3>
+            <h3 class="headline ml-5">{{ name }}</h3>
             <div> {{ color }} </div>
              <div> {{ size }} </div>
               <div> ${{ price }} </div>
           </div>
         </v-card-title>
 
-        <v-card-actions>
+        <v-card-actions class="d-flex">
           <v-btn class="white--text" color="blue">BUY</v-btn>
-          <v-btn class="white--text" color="blue">ADD TO FAVORITES</v-btn>
+          <!-- <v-btn class="white--text" color="blue">ADD TO FAVORITES</v-btn> -->
         </v-card-actions>
       </v-card>
     </v-flex>
