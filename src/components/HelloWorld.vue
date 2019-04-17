@@ -69,7 +69,7 @@ import gql from 'graphql-tag'
 
 export default {
   // components: {
-  //   PokeCard
+  //   ProductCard
   // },
   data() {
     return {
@@ -80,7 +80,7 @@ export default {
       imagelink: "https://pull01-spacexshop.netdna-ssl.com/media/catalog/product/cache/1/small_image/504x504/9df78eab33525d08d6e5fb8d27136e95/s/p/spacex-logo-jacket.png",
       
       info: "",
-      // pokemons: [],
+      products: [],
        items: [
     {
       text: 'Home',
@@ -107,12 +107,16 @@ export default {
     // .then(response => (this.info = response))
   },
   apollo: {
-    // pokemons: gql`query {
-    //   pokemons {
-    //     name
-    //     originalId
-    //   }
-    // }`,
+    products: gql`query {
+      products {
+       id
+       name
+       price
+       color
+       size
+       imagelink
+      }
+    }`,
    }
   };
   </script>

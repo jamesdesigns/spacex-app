@@ -23,20 +23,38 @@
 
     <v-content>
       <HelloWorld/>
-      <PokeList/>
+       <display/> 
+       <spacexAllProducts/>
+       <spacexOneProduct/>
+       <spacexConnectProduct/>
+       <spacexCreateProduct/>
+       <spacexUpdateProduct/>
+       <spacexDeleteProduct/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-// import PokeList from './components/PokeList'
+import display from './components/display'
+import spacexAllProducts from './components/spacexAllProducts'
+import spacexOneProduct from './components/spacexOneProduct'
+import spacexConnectProduct from './components/spacexConnectProduct'
+import spacexCreateProduct from './components/spacexCreateProduct'
+import spacexUpdateProduct from './components/spacexUpdateProduct'
+import spacexDeleteProduct from './components/spacexDeleteProduct'
+
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    // PokeList
+    display,
+    spacexAllProducts,
+    spacexOneProduct,
+    spacexConnectProduct,
+    spacexCreateProduct,
+    spacexDeleteProduct,
+    spacexUpdateProduct
   },
   data () {
     return {
