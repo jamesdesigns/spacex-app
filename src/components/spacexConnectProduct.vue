@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-btn color="info" v-on:click="getAllGraphql()">Connections</v-btn>
+    <v-btn v-on:click="getAllGraphql()">Connections</v-btn>
     {{ myProduct }}
-    error: {{ error }}
+    <!-- error: {{ error }} -->
   </div>
 </template>
 

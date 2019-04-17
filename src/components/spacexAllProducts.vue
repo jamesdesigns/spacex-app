@@ -1,8 +1,10 @@
 <template>
   <div>
-    <v-btn color="info" v-on:click="getAllGraphql()">All</v-btn>
-    {{ myProduct }}
-    error: {{ error }}
+    <v-container>
+        <h1>All Products</h1>
+        <v-btn v-on:click="getAllGraphql(), toggle()">View All</v-btn>
+        <v-card v-show="isOpen">{{ myProduct.products }}  {{ error }}</v-card>
+    </v-container>
   </div>
 </template>
 
@@ -12,7 +14,8 @@ export default {
   data() {
     return {
       error: "",
-      myProduct: {}
+      myProduct: {},
+      isOpen: false
     };
   },
   methods: {
@@ -37,6 +40,9 @@ export default {
         .catch(err => {
           this.error = err;
         });
+    },
+    toggle: function() {
+        this.isOpen = !this.isOpen
     }
   }
 };

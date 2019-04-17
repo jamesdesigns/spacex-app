@@ -6,7 +6,7 @@
           <v-flex xs12>
             <v-text-field v-model="product.id" label="id" required></v-text-field>
           </v-flex>
-      <v-btn @click="submitDelete()">Delete</v-btn>
+      <v-btn color="error" @click="submitDelete()">Delete</v-btn>
         </v-container>
   </div>
 </template>
