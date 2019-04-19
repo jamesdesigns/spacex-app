@@ -32,11 +32,11 @@ export default {
   data: () => ({
     error: "",
     product: {
-        id: String,
-        name: String,
-        price: Float32Array,
-        color: String,
-        size: String
+        // id: String,
+        // name: String,
+        // price: Float32Array,
+        // color: String,
+        // size: String
     },
     returnedProduct: {}
   }),

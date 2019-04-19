@@ -6,17 +6,19 @@
           width="50px"
           height="50px"
         ></v-img>
-  
+        <!-- <v-card-text>
+        <p class="subheading text-xs-right">Product Store</p>
+        </v-card-text> -->
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
-      <v-layout align-center>
+      <v-card-text style="height: 50px;padding-top:50px;padding-bottom:50px;" class="grey lighten-5 text-xs-center">
       <v-btn color="info" @click="toggle()">GraphQL Data</v-btn>
-      </v-layout>
+      </v-card-text>
       <v-container v-show="isOpen">
         <spacexAllProducts/>
-        <spacexOneProduct/>
         <spacexConnectProduct/>
+        <spacexOneProduct/>
         <spacexCreateProduct/>
         <spacexUpdateProduct/>
         <spacexDeleteProduct/>
