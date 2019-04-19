@@ -7,7 +7,7 @@
               :key="product.name"
               xs4
             >
-                <productCard :product="product" width="200px" height="200px"/>
+                <myProductCard :product="product" width="200px" height="200px"/>
             </v-flex>
         </v-layout>
     </v-container>
@@ -15,12 +15,12 @@
 
 <script>
 import gql from 'graphql-tag'
-import productCard from './productCard.vue'
+import myProductCard from './myProductCard.vue'
 
     export default {
         name: "display",
         components: {
-            productCard
+            myProductCard
         },
         data() {
             return {

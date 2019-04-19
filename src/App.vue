@@ -1,43 +1,26 @@
 <template>
   <v-app>
     <v-toolbar app>
-        <!-- <v-img
-          v-bind:src="imagelogo"
-          aspect-ratio="4.60"
-        ></v-img> -->
-
-                <v-img
+        <v-img
           v-bind:src="imagelogo"
           width="50px"
           height="50px"
         ></v-img>
   
       <v-spacer></v-spacer>
-       <!-- <v-btn
-        flat
-        href="https://github.com/jamesdesigns"
-        target="_blank"
-      >  -->
-        <!-- <span class="mr-2">Product Store</span> -->
-        
-      <!-- </v-btn> -->
-
-      <!-- <v-btn icon>
-            <v-icon>search</v-icon>
-          </v-btn> -->
     </v-toolbar>
     <v-content>
       <!-- <HelloWorld/> -->
-      <!-- <v-btn @click="toggle()">GraphQL Content</v-btn> -->
-      <v-container>
-       <spacexAllProducts/>
-       <spacexOneProduct/>
-       <spacexConnectProduct/>
-       <spacexCreateProduct/>
-       <spacexUpdateProduct/>
-       <spacexDeleteProduct/>
+      <v-btn color="info" @click="toggle()">GraphQL Data</v-btn>
+      <v-container v-show="isOpen">
+        <spacexAllProducts/>
+        <spacexOneProduct/>
+        <spacexConnectProduct/>
+        <spacexCreateProduct/>
+        <spacexUpdateProduct/>
+        <spacexDeleteProduct/>
       </v-container> 
-             <display/> 
+        <display/> 
     </v-content>
   </v-app>
 </template>

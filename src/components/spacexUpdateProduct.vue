@@ -1,6 +1,7 @@
 <template>
   <div class="about">
         <v-container>
+            <v-card>
             <h1>Update Product</h1>
           <v-flex xs12>
             <v-text-field v-model="product.id" label="id" required></v-text-field>
@@ -20,6 +21,7 @@
       <v-btn @click="submitUpdate()">Update</v-btn>
             {{ error }}
             {{ returnedProduct }}
+            </v-card>
         </v-container>
   </div>
 </template>
