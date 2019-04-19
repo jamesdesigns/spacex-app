@@ -32,7 +32,7 @@ export default {
     error: "",
     product: {
       name: String,
-      price: Float,
+      price: Float32Array,
       color: String,
       size: String,
       imagelink: String
@@ -50,20 +50,24 @@ export default {
                 $size: String
                 $imagelink: String
             ) {
-                createProduct(data: {
+                createProduct(
+                  data: {
                     name: $name
                     price: $price
                     color: $color
                     size: $size
                     imagelink: $imagelink
-                }) {
+                }
+              ) 
+                {
+                    id
                     name
                     price
                     color
                     size
                     imagelink
                 }
-                }
+            }
           `,
           variables: {
             name: this.product.name,

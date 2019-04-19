@@ -19,8 +19,9 @@
         <spacexCreateProduct/>
         <spacexUpdateProduct/>
         <spacexDeleteProduct/>
+         <display/> 
       </v-container> 
-        <display/> 
+       
     </v-content>
   </v-app>
 </template>

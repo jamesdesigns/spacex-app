@@ -18,7 +18,7 @@ export default {
       myProduct: {
         id: String,
         name: String,
-        price: Float,
+        price: Float32Array,
         size: String
       },
       isOpen: false

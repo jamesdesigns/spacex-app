@@ -17,8 +17,7 @@ export default {
   data: () => ({
     error: "",
     product: {
-        id: String,
-        name: String
+        id: String
     },
     returnedProduct: {}
   }),
@@ -26,16 +25,14 @@ export default {
     submitDelete: function() {
       this.$apollo.mutate({
           mutation: gql`
-                mutation deleteProduct(
-                    $id: ID
-                ) {
-                    deleteProduct (
-                        where: {id: $id }) 
+                mutation deleteProduct {
+                     deleteProduct (where: {
+                     id: $id 
+                     })
                     {
                         id
-                        name
                     }
-                    }
+                 }
           `,
           variables: {
             id: this.product.id,

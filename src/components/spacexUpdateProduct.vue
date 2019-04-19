@@ -34,7 +34,7 @@ export default {
     product: {
         id: String,
         name: String,
-        price: Float,
+        price: Float32Array,
         color: String,
         size: String
     },
@@ -44,28 +44,23 @@ export default {
     submitUpdate: function() {
       this.$apollo.mutate({
           mutation: gql`
-                mutation updateProduct(
+                mutation updateProduct (
                     $id: ID
                     $name: String
-                ) {
+                    ) {
                     updateProduct(
-                    data:{name: $name}
-                    where:{id: $id}
-                ) {
+                        where: { id: $id }, 
+                        data:{ name: $name }
+                    )
+                {
                     id
                     name
-                    price
-                    color
-                    size
                 }
-                }
+            } 
           `,
           variables: {
             id: this.product.id,
             name: this.product.name,
-            price: this.product.price,
-            color: this.product.color,
-            size: this.product.size
           }
         })
         .then(res => {
