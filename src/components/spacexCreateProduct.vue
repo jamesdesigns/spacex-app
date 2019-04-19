@@ -1,7 +1,7 @@
 <template>
   <div class="about">
         <v-container>
-            <h1>Create a New Product</h1>
+            <h2>Create a New Product</h2>
           <v-flex xs12>
             <v-text-field v-model="product.name" label="Name" required></v-text-field>
           </v-flex>

@@ -1,9 +1,9 @@
 <template>
   <div class="about">
     <v-container>
-        <h1>View One Product</h1>
+        <h2>View One Product</h2>
         <v-text-field v-model="myProduct.id" label="ID" required></v-text-field>
-      <v-btn color="info" v-on:click="getOneGraphql()">One</v-btn>
+      <v-btn v-on:click="getOneGraphql()">One</v-btn>
         <div v-show="isOpen"> {{ error }} {{ myProduct }} </div>
     </v-container>
   </div>

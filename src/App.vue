@@ -10,8 +10,9 @@
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
-      <!-- <HelloWorld/> -->
+      <v-layout align-center>
       <v-btn color="info" @click="toggle()">GraphQL Data</v-btn>
+      </v-layout>
       <v-container v-show="isOpen">
         <spacexAllProducts/>
         <spacexOneProduct/>
