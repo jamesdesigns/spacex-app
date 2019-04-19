@@ -1,5 +1,6 @@
 <template>
     <v-container>
+        <h1>Products</h1>
         <v-layout row wrap>
             <v-flex
               v-for="product in products"
@@ -33,13 +34,14 @@ import productCard from './productCard.vue'
         apollo: {
             products: gql`query{
                 products {
+                    id
                     name
                     price
                     color
                     size
                     imagelink
                 }
-            }`,
+            }`
         }
     }
 </script>

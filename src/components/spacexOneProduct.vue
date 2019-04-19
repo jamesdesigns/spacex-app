@@ -1,10 +1,10 @@
 <template>
   <div class="about">
     <v-container>
+        <h1>View One Product</h1>
         <v-text-field v-model="myProduct.id" label="ID" required></v-text-field>
       <v-btn color="info" v-on:click="getOneGraphql()">One</v-btn>
-          {{ error }}
-      {{ myProduct }}
+        <div v-show="isOpen"> {{ error }} {{ myProduct }} </div>
     </v-container>
   </div>
 </template>
@@ -18,8 +18,10 @@ export default {
       myProduct: {
         id: String,
         name: String,
-        price: Float
-      }
+        price: Float,
+        size: String
+      },
+      isOpen: false
     };
   },
   methods: {
@@ -35,13 +37,15 @@ export default {
                 id
                 name
                 price
+                size
               }
             }
           `,
           variables: {
             id: this.myProduct.id,
             name: this.myProduct.name,
-            price: this.myProduct.price
+            price: this.myProduct.price,
+            size: this.myProduct.size
           }
         })
         .then(res => {
@@ -50,6 +54,9 @@ export default {
         .catch(err => {
           this.error = err;
         });
+    },
+    toggle: function() {
+        this.isOpen = !this.isOpen
     }
   }
 };

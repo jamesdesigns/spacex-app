@@ -1,8 +1,7 @@
 <template>
   <div class="about">
-      {{ error }}
-      {{ returnedProduct }}
         <v-container>
+            <h1>Create a New Product</h1>
           <v-flex xs12>
             <v-text-field v-model="product.name" label="Name" required></v-text-field>
           </v-flex>
@@ -19,7 +18,7 @@
             <v-text-field v-model="product.imagelink" label="imagelink" required></v-text-field>
           </v-flex>
           
-      <v-btn @click="submitProduct()">Create Product</v-btn>
+      <v-btn @click="submitProduct()">Add New Product</v-btn>
         {{ error }}
         {{ returnedProduct }}      
         </v-container>

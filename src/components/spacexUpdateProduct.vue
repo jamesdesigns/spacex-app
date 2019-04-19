@@ -1,8 +1,7 @@
 <template>
   <div class="about">
-      {{ error }}
-      {{ returnedProduct }}
         <v-container>
+            <h1>Update Product</h1>
           <v-flex xs12>
             <v-text-field v-model="product.id" label="id" required></v-text-field>
           </v-flex>
@@ -19,6 +18,8 @@
             <v-text-field v-model="product.size" label="Size" required></v-text-field>
           </v-flex>                 
       <v-btn @click="submitUpdate()">Update</v-btn>
+            {{ error }}
+            {{ returnedProduct }}
         </v-container>
   </div>
 </template>

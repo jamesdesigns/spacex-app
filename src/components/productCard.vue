@@ -10,6 +10,8 @@
                     <li>Price: ${{ product.price }}</li>
                     <li>Color: {{ product.color }}</li>
                     <li>Size: {{ product.size }}</li>
+                    <br>
+                    <li>Product ID: {{ product.id }}</li>
                 </ul>
             </div>
         </v-card-title>

@@ -8,34 +8,36 @@
 
                 <v-img
           v-bind:src="imagelogo"
-          width="75px"
-          height="75px"
+          width="50px"
+          height="50px"
         ></v-img>
   
       <v-spacer></v-spacer>
-       <v-btn
+       <!-- <v-btn
         flat
         href="https://github.com/jamesdesigns"
         target="_blank"
-      > 
-        <span class="mr-2">Latest Release</span>
+      >  -->
+        <!-- <span class="mr-2">Product Store</span> -->
         
-      </v-btn>
+      <!-- </v-btn> -->
 
       <!-- <v-btn icon>
             <v-icon>search</v-icon>
           </v-btn> -->
     </v-toolbar>
-
     <v-content>
-      <HelloWorld/>
-       <display/> 
+      <!-- <HelloWorld/> -->
+      <!-- <v-btn @click="toggle()">GraphQL Content</v-btn> -->
+      <v-container>
        <spacexAllProducts/>
        <spacexOneProduct/>
        <spacexConnectProduct/>
        <spacexCreateProduct/>
        <spacexUpdateProduct/>
        <spacexDeleteProduct/>
+      </v-container> 
+             <display/> 
     </v-content>
   </v-app>
 </template>
@@ -50,7 +52,6 @@ import spacexUpdateProduct from './components/spacexUpdateProduct'
 import spacexDeleteProduct from './components/spacexDeleteProduct'
 
 
-
 export default {
   name: 'App',
   components: {
@@ -59,14 +60,19 @@ export default {
     spacexOneProduct,
     spacexConnectProduct,
     spacexCreateProduct,
-    spacexDeleteProduct,
-    spacexUpdateProduct
+    spacexUpdateProduct,
+    spacexDeleteProduct
   },
   data () {
     return {
       imagelogo: "http://www.stickpng.com/assets/images/5842a770a6515b1e0ad75afe.png",
-      
       //
+      isOpen: false
+    }
+  },
+  methods: {
+    toggle: function(){
+      this.isOpen = !this.isOpen
     }
   }
 }
