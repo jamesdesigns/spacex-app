@@ -2,7 +2,7 @@
   <div class="about">
         <v-container>
             
-            <h1>Update Product</h1>
+            <h2>Update a Product</h2>
           <v-flex xs12>
             <v-text-field v-model="product.id" label="id" required></v-text-field>
           </v-flex>
@@ -32,11 +32,11 @@ export default {
   data: () => ({
     error: "",
     product: {
-        // id: String,
-        // name: String,
-        // price: Float32Array,
-        // color: String,
-        // size: String
+        id: String,
+        name: String,
+        price: Float32Array,
+        color: String,
+        size: String
     },
     returnedProduct: {}
   }),

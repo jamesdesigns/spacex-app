@@ -16,10 +16,10 @@ export default {
     return {
       error: "",
       myProduct: {
-        // id: String,
-        // name: String,
-        // price: Float32Array,
-        // size: String
+        id: String,
+        name: String,
+        price: Float32Array,
+        size: String
       },
       isOpen: false
     };

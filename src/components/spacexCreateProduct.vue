@@ -1,7 +1,7 @@
 <template>
   <div class="about">
         <v-container>
-            <h2>Create a New Product</h2>
+            <h2>Create a Product</h2>
           <v-flex xs12>
             <v-text-field v-model="product.name" label="Name" required></v-text-field>
           </v-flex>
@@ -31,11 +31,11 @@ export default {
   data: () => ({
     error: "",
     product: {
-    //   name: String,
-    //   price: Float32Array,
-    //   color: String,
-    //   size: String,
-    //   imagelink: String
+      name: String,
+      price: Float32Array,
+      color: String,
+      size: String,
+      imagelink: String
     },
     returnedProduct: {}
   }),
