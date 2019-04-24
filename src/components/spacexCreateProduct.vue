@@ -18,7 +18,7 @@
             <v-text-field v-model="product.imagelink" label="imagelink" required></v-text-field>
           </v-flex>
           
-      <v-btn @click="submitProduct()">Add New Product</v-btn>
+      <v-btn @click="submitProduct()">Create</v-btn>
         {{ error }}
         {{ returnedProduct }}      
         </v-container>
@@ -31,11 +31,15 @@ export default {
   data: () => ({
     error: "",
     product: {
-      name: String,
-      price: Float32Array,
-      color: String,
-      size: String,
-      imagelink: String
+    //   name: String,
+    //   price: Float32Array,
+    //   color: String,
+    //   size: String,
+    //   imagelink: String
+    name: "",
+    price: "",
+    color: "",
+    size: "",
     },
     returnedProduct: {}
   }),

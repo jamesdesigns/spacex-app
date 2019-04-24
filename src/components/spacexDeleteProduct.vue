@@ -18,7 +18,7 @@ export default {
   data: () => ({
     error: "",
     product: {
-        id: String
+        id: ""
     },
     returnedProduct: {}
   }),

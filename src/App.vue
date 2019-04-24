@@ -9,12 +9,15 @@
         <!-- <v-card-text>
         <p class="subheading text-xs-right">Product Store</p>
         </v-card-text> -->
+        
       <v-spacer></v-spacer>
+      <v-btn color="info" @click="toggle()">GraphQL Data</v-btn>
+      <v-btn @click="toggle()">RESTful Data</v-btn>
     </v-toolbar>
     <v-content>
-      <v-card-text style="height: 50px;padding-top:50px;padding-bottom:50px;" class="grey lighten-5 text-xs-center">
-      <v-btn color="info" @click="toggle()">GraphQL Data</v-btn>
-      </v-card-text>
+      <!-- <v-card-text style="height: 50px;padding-top:50px;padding-bottom:50px;" class="grey lighten-5 text-xs-center"> -->
+      <!-- <v-btn color="info" @click="toggle()">GraphQL Data</v-btn> -->
+      <!-- </v-card-text> -->
       <v-container v-show="isOpen">
         <spacexAllProducts/>
         <spacexConnectProduct/>
@@ -24,7 +27,7 @@
         <spacexDeleteProduct/>
          <display/> 
       </v-container> 
-       
+      
     </v-content>
   </v-app>
 </template>

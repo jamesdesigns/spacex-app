@@ -32,11 +32,11 @@ export default {
   data: () => ({
     error: "",
     product: {
-        id: String,
-        name: String,
-        price: Float32Array,
-        color: String,
-        size: String
+        id: "",
+        name: "",
+        price: "",
+        color: "",
+        size: ""
     },
     returnedProduct: {}
   }),
@@ -44,19 +44,22 @@ export default {
     submitUpdate: function() {
       this.$apollo.mutate({
           mutation: gql`
-                mutation updateProduct (
-                    $id: ID
-                    $name: String
-                    ) {
-                    updateProduct(
-                        where: { id: $id }, 
-                        data:{ name: $name }
-                    )
-                {
-                    id
-                    name
-                }
-            } 
+mutation updateProduct { 
+    updateProduct(where: {
+    id: "_ENTER_EXISTING_ID_"
+},
+data: {
+    name: "Musk Track Jacket",
+    price: 30,
+    color: "Light Gray",
+    size: "Large",
+    imagelink: "https://product-image-update.png"
+})
+ {
+    id
+    name
+ }
+}
           `,
           variables: {
             id: this.product.id,
