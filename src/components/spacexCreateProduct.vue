@@ -18,7 +18,7 @@
             <v-text-field v-model="product.imagelink" label="imagelink" required></v-text-field>
           </v-flex>
           
-      <v-btn @click="submitProduct()">Create</v-btn>
+      <v-btn @click="submitProduct()">Add Product</v-btn>
         {{ error }}
         {{ returnedProduct }}      
         </v-container>
