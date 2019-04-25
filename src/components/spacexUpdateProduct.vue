@@ -18,7 +18,7 @@
           <v-flex xs12>
             <v-text-field v-model="product.size" label="Size" required></v-text-field>
           </v-flex>                 
-      <v-btn @click="submitUpdate()">Update</v-btn>
+      <v-btn @click="submitUpdate()">Update Product</v-btn>
             {{ error }}
             {{ returnedProduct }}
            
@@ -28,6 +28,7 @@
 
 <script>
 import gql from "graphql-tag";
+
 export default {
   data: () => ({
     error: "",
@@ -44,26 +45,41 @@ export default {
     submitUpdate: function() {
       this.$apollo.mutate({
           mutation: gql`
-mutation updateProduct { 
-    updateProduct(where: {
-    id: "_ENTER_EXISTING_ID_"
-},
-data: {
-    name: "Musk Track Jacket",
-    price: 30,
-    color: "Light Gray",
-    size: "Large",
-    imagelink: "https://product-image-update.png"
-})
+mutation updateProduct ( 
+    $id: ID
+    $name: String
+    $price: Float
+    $color: String
+    $size: String
+    $imagelink: String
+) {
+    updateProduct(
+        data:{ 
+            name: $name
+            price: $price
+            color: $color
+            size: $size
+            imagelink: $imagelink
+            }
+        where:{ id: $id }    
+    )
  {
     id
     name
+    price
+    color
+    size
+    imagelink
  }
 }
           `,
           variables: {
             id: this.product.id,
             name: this.product.name,
+            price: this.product.price,
+            color: this.product.color,
+            size: this.product.size,
+            imagelink: this.product.imagelink
           }
         })
         .then(res => {
