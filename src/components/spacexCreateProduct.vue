@@ -31,11 +31,6 @@ export default {
   data: () => ({
     error: "",
     product: {
-    //   name: String,
-    //   price: Float32Array,
-    //   color: String,
-    //   size: String,
-    //   imagelink: String
     name: "",
     price: "",
     color: "",
@@ -64,7 +59,6 @@ export default {
                 }
               ) 
                 {
-                    id
                     name
                     price
                     color
