@@ -26,7 +26,9 @@ export default {
     submitDelete: function() {
       this.$apollo.mutate({
           mutation: gql`
-                mutation deleteProduct {
+                mutation deleteProduct(
+                    $id: ID
+                ) {
                      deleteProduct (where: {
                      id: $id 
                      })
