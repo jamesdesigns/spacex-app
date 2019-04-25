@@ -3,8 +3,8 @@
     <v-toolbar app>
         <v-img
           v-bind:src="imagelogo"
-          width="50px"
-          height="50px"
+          max-width="350px"
+          max-height="70px"
         ></v-img>
         <!-- <v-card-text>
         <p class="subheading text-xs-right">Product Store</p>
