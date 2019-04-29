@@ -39,9 +39,7 @@
          <createProductREST/>
          <updateProductREST/>
          <deleteProductREST/>
-         <myProductCardREST/>
          <dispalyREST/>
-         <myProductCardREST/>
       </v-container>
 
     </v-content>
@@ -63,7 +61,6 @@ import oneProductREST from './components/oneProductREST'
 import createProductREST from './components/createProductREST'
 import updateProductREST from './components/updateProductREST'
 import deleteProductREST from './components/deleteProductREST'
-import myProductCardREST from './components/myProductCardREST'
 
 export default {
   name: 'App',
@@ -83,7 +80,6 @@ export default {
     createProductREST,
     updateProductREST,
     deleteProductREST,
-    myProductCardREST
   },
   data () {
     return {
