@@ -6,16 +6,13 @@
             <v-text-field v-model="product.name" label="Name" required></v-text-field>
           </v-flex>
           <v-flex xs12>
-            <v-text-field v-model="product.price" label="Price" required></v-text-field>
-          </v-flex>
-          <v-flex xs12>
             <v-text-field v-model="product.color" label="Color" required></v-text-field>
           </v-flex>
           <v-flex xs12>
             <v-text-field v-model="product.size" label="Size" required></v-text-field>
           </v-flex>
           <v-flex xs12>
-            <v-text-field v-model="product.imagelink" label="imagelink" required></v-text-field>
+            <v-text-field v-model="product.imagelink" label="imagelink"></v-text-field>
           </v-flex>
           
       <v-btn @click="submitProduct()">Add Product</v-btn>
@@ -32,9 +29,9 @@ export default {
     error: "",
     product: {
     name: "",
-    price: "",
     color: "",
     size: "",
+    imagelink: ""
     },
     returnedProduct: {}
   }),
@@ -43,16 +40,14 @@ export default {
       this.$apollo.mutate({
           mutation: gql`
             mutation createProduct(
-                $name: String
-                $price: Float
-                $color: String
-                $size: String
-                $imagelink: String
+                $name: String!
+                $color: String!
+                $size: String!
+                $imagelink: String!
             ) {
                 createProduct(
                   data: {
                     name: $name
-                    price: $price
                     color: $color
                     size: $size
                     imagelink: $imagelink
@@ -60,7 +55,6 @@ export default {
               ) 
                 {
                     name
-                    price
                     color
                     size
                     imagelink
@@ -69,7 +63,6 @@ export default {
           `,
           variables: {
             name: this.product.name,
-            price: this.product.price,
             color: this.product.color,
             size: this.product.size,
             imagelink: this.product.imagelink

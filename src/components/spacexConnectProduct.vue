@@ -1,8 +1,8 @@
 <template>
   <div>
       <v-container>
-          <h2>View Related Products</h2>
-    <v-btn v-on:click="getAllGraphql(), toggle()">Related Products</v-btn>
+          <h2>Product By Connections</h2>
+    <v-btn v-on:click="getAllGraphql(), toggle()">View Connections</v-btn>
     <div v-show="isOpen">{{ myProduct }} {{ error }}</div>
 
    </v-container>
@@ -29,6 +29,7 @@ export default {
                     edges {
                     node {
                         name
+                        color
                     }
                     }
                     pageInfo {

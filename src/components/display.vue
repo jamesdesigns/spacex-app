@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <h1>Products</h1>
+        <h2>ALL PRODUCTS</h2>
         <v-layout row wrap>
             <v-flex
               v-for="product in products"
@@ -36,7 +36,6 @@ import myProductCard from './myProductCard.vue'
                 products {
                     id
                     name
-                    price
                     color
                     size
                     imagelink

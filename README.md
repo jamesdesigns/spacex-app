@@ -1,29 +1,29 @@
-# spacex-app
+# GraphQL and RESTful Frontend Project: spacex-app
 
-## Project setup
+## Getting Setup
+
+### Run the following commands to set up GraphQL Data Server
 ```
+git clone https://github.com/jamesdesigns/james-graphql-server.git
+cd into james-graphql-server
 npm install
+npm run dockerStart
+npm run deploy
+npm run start
 ```
 
-### Compiles and hot-reloads for development
+### Run the following commands to set up the Vue Frontend
 ```
+git clone https://github.com/jamesdesigns/spacex-app.git
+cd into spacex-app
+npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Type the following in your browser
 ```
-npm run build
+localhost:8080
+
+And begin using the CRUD
 ```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

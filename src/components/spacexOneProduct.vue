@@ -1,9 +1,10 @@
 <template>
   <div class="about">
     <v-container>
-        <h2>View One Product</h2>
-        <v-text-field v-model="myProduct.id" label="ID" required></v-text-field>
-      <v-btn v-on:click="getOneGraphql()">One</v-btn>
+        <h2>Product By ID</h2>
+        <v-text-field v-model="myProduct.id" label="id" required></v-text-field>
+      <v-btn v-on:click="getOneGraphql(), toggle()">VIEW PRODUCT ID</v-btn>
+
         <div v-show="isOpen"> {{ error }} {{ myProduct }} </div>
     </v-container>
   </div>
@@ -11,6 +12,7 @@
 
 <script>
 import gql from "graphql-tag";
+
 export default {
   data() {
     return {
@@ -18,7 +20,7 @@ export default {
       myProduct: {
         id: "",
         name: "",
-        price: "",
+        color: "",
         size: ""
       },
       isOpen: false
@@ -30,22 +32,21 @@ export default {
         .query({
           query: gql`
             query oneProduct (
-              $id: ID
-            ){
-              product(where: {id: $id}
-              ) {
-                id
-                name
-                price
-                size
-              }
+                 $id: ID
+            ) {
+                product(where:{id: $id}
+                ) {
+                    id
+                    name
+                    color
+                    size
+                }
             }
           `,
           variables: {
             id: this.myProduct.id,
-            name: this.myProduct.name,
-            price: this.myProduct.price,
-            size: this.myProduct.size
+            // name: this.myProduct.name,
+            // size: this.myProduct.size
           }
         })
         .then(res => {

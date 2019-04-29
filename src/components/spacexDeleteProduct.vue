@@ -7,7 +7,7 @@
           </v-flex>
       <v-btn color="error" @click="submitDelete()">Delete</v-btn>
             {{ error }}
-            {{ returnedProduct }}
+            {{ returnedProduct }} 
         </v-container>
   </div>
 </template>
