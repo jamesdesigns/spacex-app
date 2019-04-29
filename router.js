@@ -17,7 +17,7 @@ import updateProductREST from "./components/updateProductREST"
 import myProductCard from "./components/myProductCard"
 import myProductCardREST from "./components/myProductCardREST"
 import display from "./components/display"
-import displayREST from "./displayREST"
+import displayREST from "./components/displayREST"
 
 
 
