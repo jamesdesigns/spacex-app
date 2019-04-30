@@ -27,4 +27,6 @@ localhost:8080
 
 And begin using the CRUD
 ```
-<span style="color: red;"> Note: OPEN GRAPHQL DATA / OPEN RESTFUL DATA buttons must be clicked once to open and then clicked once again to close.</span>
+```diff
+- Note: OPEN GRAPHQL DATA / OPEN RESTFUL DATA buttons must be clicked once to open and then clicked once again to close.
+```
