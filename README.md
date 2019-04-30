@@ -29,4 +29,5 @@ And begin using the CRUD
 ```
 
 
-#### Note: OPEN GRAPHQL DATA / OPEN RESTFUL DATA buttons must be clicked once to open and then clicked once again to close.
+#### Note: 
+#### OPEN GRAPHQL DATA / OPEN RESTFUL DATA buttons must be clicked once to open and then clicked once again to close.
