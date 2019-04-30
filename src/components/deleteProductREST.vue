@@ -16,14 +16,15 @@ export default {
         return {
             id: this.$route.params.id,
             product: {
+
             }
         }
     },
     created() {
         axios
-        .get('https://guarded-headland-15878.herokuapp.com/products/')
-        .then((res) => {
-            this.product = res.data
+        .get('http://guarded-headland-15878.herokuapp.com/products/')
+        .then((response) => {
+            this.product = response.data
             })
             .catch((error) => {
                 console.log(error)
@@ -37,8 +38,8 @@ export default {
             console.log(productInfo)
             axios
             .delete('https://guarded-headland-15878.herokuapp.com/products/' + this.id + '/delete')
-            .then((res) => {
-                alert('Product Deleted!' + productInfo)
+            .then((response) => {
+                console.log('Product Deleted!')
                 this.$router.push('/')
             })
             .catch((error) => {

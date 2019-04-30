@@ -9,6 +9,7 @@ cd into james-graphql-server
 npm install
 npm run dockerStart
 npm run deploy
+npm run load
 npm run start
 ```
 
@@ -26,4 +27,4 @@ localhost:8080
 
 And begin using the CRUD
 ```
-
+#### Note: OPEN GRAPHQL DATA / OPEN RESTFUL DATA buttons must be clicked once to open and then clicked once again to close.

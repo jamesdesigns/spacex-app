@@ -19,14 +19,27 @@ import axios from 'axios'
 export default {
     data () {
         return {
-            products: []
+            products: {
+                id: "",
+                name: "",
+                price: "",
+                color: "",
+                size: ""
+            },
+            id: this.$route.params.id,
+            isOpen: false
         }
     },
     props: {
-        product: {
-            type: Object,
-            required: true
-        }
+
+    },
+
+    created() {
+        axios.get('https://guarded-headland-15878.herokuapp.com/products/')
+        .then((response) => {
+            this.products = response.data
+        })
+        .catch(error => console.log(error))
     },
 
     methods: {
@@ -35,7 +48,7 @@ export default {
                 .get('https://guarded-headland-15878.herokuapp.com/products/' + this.id)
                 .then((response) => {
                     this.products = response.data
-                    console.log(res)
+                    console.log(response)
                 })
                 .catch(error => console.log(error))
             },
@@ -43,15 +56,6 @@ export default {
                 this.isOpen = !this.isOpen
             }
         }
-    
-        // created(){
-        //     axios
-        //         .get('https://guarded-headland-15878.herokuapp.com/products/all')
-        //         .then((response) => {
-        //             this.products = response.data
-        //         })
-        //         .catch(error => console.log(error))
-        //         }
 }
 </script>
 <style>

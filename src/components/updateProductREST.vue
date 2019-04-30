@@ -9,8 +9,6 @@
               <v-text-field v-model="name" label="Name" required></v-text-field>
             </v-flex>
             <v-btn @click="updateProduct">Update</v-btn>
-            {{ error }}
-            {{ returnedProduct }}
         </v-container>
   </div>
 </template>
@@ -21,7 +19,7 @@ export default {
     data() {
         return {
             id: this.$route.params.id,
-            description: this.description,
+            name: this.name,
             product: {
             }
         }
@@ -29,8 +27,8 @@ export default {
     created() {
         axios
         .get('https://guarded-headland-15878.herokuapp.com/products/all')
-        .then((res) => {
-            this.product = res.data
+        .then((response) => {
+            this.product = response.data
             })
             .catch((error) => {
                 console.log(error)
@@ -43,7 +41,7 @@ export default {
         updateProduct() {
             const productInfo = {
                 id: this.id,
-                description: this.description
+                name: this.name
             }
             console.log(productInfo)
             axios

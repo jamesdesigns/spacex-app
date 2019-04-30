@@ -16,12 +16,12 @@
             </v-flex>
             <v-btn @click="createProduct">Create</v-btn>
         
-
         </v-container>
     </div>
 </template>
 <script>
 import axios from 'axios'
+
 export default {
     data() {
         return {
@@ -41,9 +41,9 @@ export default {
             }
             console.log(productInfo)
             axios
-            .post('https://guarded-headland-15878.herokuapp.com/products/', productInfo)
-            .then((res) => {
-                alert('Product Created!')
+            .post('https://guarded-headland-15878.herokuapp.com/products/create', productInfo)
+            .then((response) => {
+                console.log('Product Created!')
                 this.$router.push('/')
             })
             .catch(error => console.log(error))

@@ -4,7 +4,7 @@
         <v-layout row wrap>
             <v-flex
               v-for="product in products"
-              :key="product.name"
+              :key="product._id"
               xs4
             >
                  <myProductCardREST :product="product" width="200px" height="400px"/>
@@ -27,15 +27,13 @@ export default {
             products: []
         }
     },
-    mounted() {
+    created() {
         axios
         .get('https://guarded-headland-15878.herokuapp.com/products/')
-        .then(response => {
+        .then((response) => {
             this.products = response.data
         })
-        .catch(error => { 
-            console.log(error)
-            })
+        .catch(error => console.log(error))
     }
 }
 </script>

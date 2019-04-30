@@ -8,10 +8,9 @@
         <v-layout row wrap>
             <v-flex
               v-for="product in products"
-              :key="product.products"
+              :key="product._id"
               xs4
-            > {{ product.id }}
-
+            > 
                 <myProductCardREST :product="product" width="200px" height="200px"/>
             </v-flex>
         </v-layout>
@@ -21,8 +20,8 @@
 
 <script>
 import axios from 'axios'
-
 import myProductCardREST from './myProductCardREST.vue'
+
 export default {
     name: "displayREST",
     components: {
@@ -33,14 +32,12 @@ export default {
             products: []
         }
     },
-    mounted() {
+    created() {
        axios
         .get('https://guarded-headland-15878.herokuapp.com/products/')
-        .then(response => ( this.products = response.data.products ))
-        .catch(error => {
-            console.log(error)
-        })
-    },
+        .then((response) => { this.products = response.data })
+        .catch(error => console.log(error))
+    }
 }
 </script>
 <style>
