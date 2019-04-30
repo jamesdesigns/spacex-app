@@ -14,7 +14,8 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            id: this.$route.params.id,
+            // id: this.$route.params.id,
+            id: this.id,
             product: {
 
             }

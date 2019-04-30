@@ -3,7 +3,7 @@
    <v-container>
       <h1>RESTful Data</h1>
        <h2>All Products</h2>
-       <v-btn v-on:click="mounted(), toggle()">View All</v-btn>
+       <v-btn v-on:click="toggle()">View All</v-btn>
        <v-card v-show="isOpen">{{ products.products }}  {{ error }}</v-card>
         <v-layout row wrap>
             <v-flex
@@ -29,7 +29,9 @@ export default {
     },
     data() {
         return {
-            products: []
+            error:"",
+            products: [],
+            isOpen: false
         }
     },
     created() {
@@ -37,6 +39,9 @@ export default {
         .get('https://guarded-headland-15878.herokuapp.com/products/')
         .then((response) => { this.products = response.data })
         .catch(error => console.log(error))
+    },
+        toggle: function() {
+        this.isOpen = !this.isOpen
     }
 }
 </script>

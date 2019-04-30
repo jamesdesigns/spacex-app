@@ -35,12 +35,11 @@
       <v-container v-show="open">
          <allProductsREST/>
          <connectProductREST/>
-         <displayREST/>
          <oneProductREST/>
          <createProductREST/>
          <updateProductREST/>
          <deleteProductREST/>
-         
+         <displayREST/>
       </v-container>
 
     </v-content>
@@ -93,15 +92,15 @@ export default {
   methods: {
     toggle: function(){
       this.open = !this.open
-      // if(this.isOpen) {
-      //   this.open = false
-      // }
+      if(this.isOpen) {
+        this.open = false
+      }
     },
     toggleTwo: function(){
       this.isOpen = !this.isOpen
-      // if(this.open) {
-      //   this.isOpen = false
-      // }
+      if(this.open) {
+        this.isOpen = false
+      }
     }
   }
 }

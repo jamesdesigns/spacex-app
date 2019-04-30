@@ -7,9 +7,10 @@
             </v-flex>
 
             <v-btn @click="viewOne(), toggle()">VIEW PRODUCT ID</v-btn>
-            <v-card v-show="isOpen">
-            {{ products.name}}
-            </v-card>
+          {{ products.name }} {{ error }}
+            <!-- <v-card v-show="open">
+            {{ products.name }}
+            </v-card> -->
         </v-container>
     </div>
 </template>
@@ -19,6 +20,7 @@ import axios from 'axios'
 export default {
     data () {
         return {
+            error: "",
             products: {
                 id: "",
                 name: "",
@@ -26,14 +28,11 @@ export default {
                 color: "",
                 size: ""
             },
-            id: this.$route.params.id,
-            isOpen: false
+            // id: this.$route.params.id,
+            id: this.id,
+            open: false
         }
     },
-    props: {
-
-    },
-
     created() {
         axios.get('https://guarded-headland-15878.herokuapp.com/products/')
         .then((response) => {
@@ -53,7 +52,7 @@ export default {
                 .catch(error => console.log(error))
             },
             toggle: function() {
-                this.isOpen = !this.isOpen
+                this.open = !this.open
             }
         }
 }

@@ -8,6 +8,15 @@
             <v-flex xs12>
               <v-text-field v-model="name" label="Name" required></v-text-field>
             </v-flex>
+             <v-flex xs12>
+              <v-text-field v-model="price" label="Price" required></v-text-field>
+            </v-flex>
+             <v-flex xs12>
+              <v-text-field v-model="color" label="Color" required></v-text-field>
+            </v-flex>
+             <v-flex xs12>
+              <v-text-field v-model="size" label="Size" required></v-text-field>
+            </v-flex>
             <v-btn @click="updateProduct">Update</v-btn>
         </v-container>
   </div>
@@ -18,15 +27,19 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            id: this.$route.params.id,
+            // id: this.$route.params.id,
+            id: this.id,
             name: this.name,
+            price: this.price,
+            color: this.color,
+            size: this.size,
             product: {
             }
         }
     },
     created() {
         axios
-        .get('https://guarded-headland-15878.herokuapp.com/products/all')
+        .get('https://guarded-headland-15878.herokuapp.com/products/update')
         .then((response) => {
             this.product = response.data
             })
@@ -41,7 +54,10 @@ export default {
         updateProduct() {
             const productInfo = {
                 id: this.id,
-                name: this.name
+                name: this.name,
+                price: this.price,
+                color: this.color,
+                size: this.size
             }
             console.log(productInfo)
             axios
