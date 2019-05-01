@@ -2,17 +2,17 @@
 <div>
     <v-card flat tile style="padding-left:5px; padding-right: 5px">
        
-        <h3 class="headline mb-0">{{ product.name }}</h3>
+        <h3 class="headline mb-0">{{ products.name }}</h3>
       
         <v-card-title primary-title>
             <div >
-                <h3 class="headline mb-0">{{ product.name }}</h3>
+                <h3 class="headline mb-0">{{ products.name }}</h3>
                 <ul>
-                    <li>ID: {{ product._id }}</li>
-                    <li>Name: {{ product.name }}</li>
-                    <li>Price: {{ product.price }}</li>
-                    <li>Color: {{ product.color }}</li>
-                    <li>Size: {{ product.size }}</li>
+                    <li>ID: {{ products._id }}</li>
+                    <li>Name: {{ products.name }}</li>
+                    <li>Price: {{ products.price }}</li>
+                    <li>Color: {{ products.color }}</li>
+                    <li>Size: {{ products.size }}</li>
                 </ul>
             </div>
         </v-card-title>
@@ -29,7 +29,7 @@ export default {
         }
     },
     props: {
-        product: {
+        products: {
             type: Object,
             required: true
         }

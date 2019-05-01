@@ -36,7 +36,7 @@ export default {
     },
     created() {
        axios
-        .get('https://guarded-headland-15878.herokuapp.com/products/')
+        .get('https://guarded-headland-15878.herokuapp.com/products')
         .then((response) => { this.products = response.data })
         .catch(error => console.log(error))
     },

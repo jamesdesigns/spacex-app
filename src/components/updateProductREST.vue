@@ -39,7 +39,7 @@ export default {
     },
     created() {
         axios
-        .get('https://guarded-headland-15878.herokuapp.com/products/update')
+        .get('https://guarded-headland-15878.herokuapp.com/products/' + this.id + '/update')
         .then((response) => {
             this.product = response.data
             })
@@ -63,7 +63,7 @@ export default {
             axios
             .put('https://guarded-headland-15878.herokuapp.com/products/' + this.id + '/update', productInfo)
             .then((res) => {
-                alert('Product Updated!' + productInfo)
+                alert('Product Updated!')
                 this.$router.push('/')
             })
             .catch((error) => {

@@ -33,7 +33,7 @@ export default {
     },
     methods: {
         createProduct () {
-            const productInfo = {
+            const products = {
                 name: this.name,
                 price: this.price,
                 color: this.color,
@@ -41,7 +41,7 @@ export default {
             }
             console.log(productInfo)
             axios
-            .post('https://guarded-headland-15878.herokuapp.com/products/create', productInfo)
+            .post('https://guarded-headland-15878.herokuapp.com/products/create', products)
             .then((response) => {
                 console.log('Product Created!')
                 this.$router.push('/')
